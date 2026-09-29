@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>our loved</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap">
+<style>
+:root{--pink:#e8a0b8;--soft:#fdf1f5;--deep:#b8577a;--ink:#4a3540;--muted:#8d7580;box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:#fff;color:var(--ink);font-family:'DM Sans','Helvetica Neue',sans-serif;line-height:1.75;overflow-x:hidden}
+h1,h2{font-family:'DM Serif Display',Georgia,serif;font-weight:400;margin:0;line-height:1.2}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+main{padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));min-height:100svh}
+.page{display:none;max-width:900px;margin:0 auto;padding:56px 22px}
+.page.on{display:block;animation:in .6s ease both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+
+/* beranda */
+#home{max-width:none;padding:0}
+.hero{min-height:calc(100svh - 84px);padding:8vh 22px 48px;background:linear-gradient(#fff,var(--soft));text-align:center}
+.hero-in{max-width:620px;margin:0 auto}
+.block{max-width:900px;margin:0 auto;padding:56px 22px}
+.quote{font-size:clamp(1.9rem,7vw,3.2rem);font-style:italic;color:var(--ink);margin-bottom:8px}
+.line{width:48px;height:2px;background:var(--pink);margin:20px auto}
+.duo{display:flex;justify-content:center;gap:14px;margin:34px 0 26px}
+.duo img{width:min(38vw,190px);aspect-ratio:4/5;object-fit:cover;box-shadow:0 16px 34px rgba(184,87,122,.18)}
+.duo img:first-child{border-radius:100px 100px 14px 14px;margin-top:26px}
+.duo img:last-child{border-radius:14px 14px 100px 100px}
+.go{font:inherit;background:none;border:1.5px solid var(--pink);color:var(--deep);padding:10px 24px;border-radius:999px;cursor:pointer}
+.go:hover{background:var(--pink);color:#fff}
+
+/* kata-kata */
+.words{display:grid;gap:18px;margin-top:26px}
+.words blockquote{margin:0;padding:22px 24px;background:var(--soft);border-left:3px solid var(--pink);border-radius:4px 16px 16px 4px;font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;line-height:1.5}
+
+/* galeri */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 22px}
+.chip{font:inherit;font-size:.92rem;border:1.5px solid var(--pink);background:#fff;color:var(--deep);padding:6px 16px;border-radius:999px;cursor:pointer}
+.chip.on{background:var(--pink);color:#fff}
+.grid{columns:2 220px;column-gap:16px}
+.grid figure{margin:0 0 16px;break-inside:avoid;cursor:zoom-in}
+.grid img{width:100%;display:block;border-radius:10px}
+.grid figcaption{font-size:.9rem;color:var(--muted);padding:6px 2px 0}
+
+.note{background:var(--soft);border-radius:20px;max-width:600px;margin:0 auto;padding:36px 28px}
+.note p:last-child{margin:0;color:var(--deep)}
+
+/* footer nav */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-top:1px solid #f3dbe4;display:flex;justify-content:center;gap:4px;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px))}
+nav button{font:inherit;font-size:.85rem;flex:1;max-width:160px;border:0;background:none;color:var(--muted);padding:8px 4px;border-radius:12px;cursor:pointer;display:grid;gap:2px;justify-items:center}
+nav button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+nav button.on{color:var(--deep);background:var(--soft)}
+button:focus-visible{outline:2px solid var(--deep);outline-offset:2px}
+
+.lb{position:fixed;inset:0;background:rgba(74,53,64,.88);display:none;align-items:center;justify-content:center;padding:20px;z-index:9;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:90svh;border-radius:12px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.song{max-width:900px;margin:0 auto;padding:56px 22px 0}
+.song-card{max-width:520px;margin:0 auto;background:var(--soft);border-radius:22px;padding:22px 22px 20px;text-align:center}
+.song-card h2{font-size:1.5rem;margin-bottom:2px}
+.song-card p{margin-bottom:14px}
+.song-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.song-btns a{font:inherit;text-decoration:none;display:inline-block;border:1.5px solid var(--pink);color:var(--deep);padding:10px 22px;border-radius:999px}
+.song-btns a:hover{background:var(--pink);color:#fff}
+.song-btns .go{background:var(--pink);color:#fff}
+.song-frame{display:none;margin-top:16px}
+.song-frame.on{display:block}
+.song-frame iframe{width:100%;height:152px;border:0;border-radius:12px}
+</style>
+</head>
+<body>
+<main>
+  <section class="page on" id="home">
+    <div class="hero"><div class="hero-in">
+      <p class="muted"> <span id="nm">You</span> </p>
+      <h1 class="quote">Not everything that's over is bad</h1>
+      <p class="muted" style="font-size:1.1rem">Sebagian hanya perlu disimpan dengan baik.</p>
+      <div class="line"></div>
+      <div class="duo">
+        <img src="foto/foto1.jpg" alt="">
+        <img src="foto/foto2.jpg" alt="">
+      </div>
+      <button class="go" data-go="gallery">Our gallery</button>
+    </div></div>
+      <div class="song">
+      <div class="song-card">
+        <p class="muted" style="margin:0">lagu untuk diputar</p>
+        <h2>About You</h2>
+        <p class="muted">The 1975</p>
+        <div class="song-btns">
+          <button class="go" id="playSong">Putar lagu</button>
+          <a href="https://open.spotify.com/track/1fDFHXcykq4iw8Gg7s5hG9" target="_blank" rel="noopener">Buka di Spotify</a>
+        </div>
+        <div class="song-frame" id="songFrame"></div>
+      </div>
+    </div>
+    <div class="block" id="words">
+    <h2>Words</h2>
+    <p class="muted">the words I am about to say</p>
+    <div class="words">
+      <blockquote>“Even though we’re no longer together, I’ll always be grateful for the memories we shared. You were once a beautiful part of my life, and I’ll always wish you nothing but happiness. I hope life treats you kindly, wherever it takes you.”
+</blockquote>
+      <blockquote>“I don’t regret meeting you. You gave me memories I’ll always carry with me, and even though our story ended, I’m still thankful that you were once a part of it. I genuinely hope you’re happy.”
+</blockquote>
+      <blockquote>“Sometimes I still remember the little things about us, and they make me smile. We may have gone our separate ways, but I’ll always appreciate the time we had together. Thank you for being someone I once called mine.”
+</blockquote>
+      <blockquote>“Maybe we weren’t meant to stay together forever, but I’m glad our paths crossed. You’ll always have a special place in my memories, and I hope you find someone who makes you truly happy.”
+</blockquote>
+    </div>
+  </div>
+  <div class="block" id="letter">
+    <div class="note">
+      <h2>Surat penutup</h2>
+      <div class="line" style="margin-left:0"></div>
+      <p>“Thank you for every memory, every laugh, and every moment we shared. I’ll always be grateful that our paths crossed. Maybe we weren’t meant to stay forever, but I’ll always cherish what we had. This is my goodbye—not because it meant nothing, but because it meant enough to let go.” semoga kamu selalu dikelilingi oleh orang orang baik.
+</p>
+    </div>
+  </div>
+  </section>
+
+
+  <section class="page" id="gallery">
+    <button class="go" data-go="home" style="margin-bottom:22px">← Kembali</button>
+    <h2>Galeri</h2>
+    <p class="muted">Klik foto untuk memperbesar.</p>
+    <div class="chips">
+      <button class="chip on" data-f="all">Semua</button>
+      <button class="chip" data-f="solo">Kamu</button>
+      <button class="chip" data-f="duo">Berdua</button>
+    </div>
+    <div class="grid">
+      <figure data-c="solo"><img src="foto/foto3.jpg" alt="" loading="lazy"><figcaption>Hari yang tenang</figcaption></figure>
+      <figure data-c="solo"><img src="foto/foto4.jpg" alt="" loading="lazy"><figcaption>Apa adanya</figcaption></figure>
+      <figure data-c="duo"><img src="foto/foto2.jpg" alt="" loading="lazy"><figcaption>Kita</figcaption></figure>
+      <figure data-c="solo"><img src="foto/foto5.jpg" alt="" loading="lazy"><figcaption>Jalan-jalan sore</figcaption></figure>
+      <figure data-c="solo"><img src="foto/foto1.jpg" alt="" loading="lazy"><figcaption>Senyum yang kuingat</figcaption></figure>
+      <figure data-c="solo"><img src="foto/foto6.jpg" alt="" loading="lazy"><figcaption>Perjalanan</figcaption></figure>
+      <figure data-c="solo"><img src="foto/foto7.jpg" alt="" loading="lazy"><figcaption>Minuman favorit</figcaption></figure>
+      <figure data-c="solo"><img src="foto/foto8.jpg" alt="" loading="lazy"><figcaption>Versi lucunya</figcaption></figure>
+      <figure data-c="solo"><img src="foto/foto9.jpg" alt="" loading="lazy"><figcaption>Santai di rumah</figcaption></figure>
+      <figure data-c="solo"><img src="foto/foto10.jpg" alt="" loading="lazy"><figcaption>Senyum tipis</figcaption></figure>
+    </div>
+  </section>
+
+</main>
+
+<nav aria-label="Kategori">
+  <button data-go="gallery"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="M21 16l-5-5-8 9"/></svg>Galeri</button>
+</nav>
+
+<div class="lb" id="lb"><img alt=""></div>
+
+<script>
+/* ====== EDIT DI SINI ====== */
+var NAMA = "kamu"; // ganti dengan nama dia kalau mau
+/* ========================== */
+document.getElementById('nm').textContent = NAMA;
+
+function show(id) {
+  document.querySelectorAll('.page').forEach(function (p) { p.classList.toggle('on', p.id === id); });
+  document.querySelectorAll('nav button').forEach(function (b) { b.classList.toggle('on', b.dataset.go === id); });
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll('[data-go]').forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.go); }); });
+
+document.querySelectorAll('.chip').forEach(function (c) {
+  c.addEventListener('click', function () {
+    document.querySelectorAll('.chip').forEach(function (x) { x.classList.toggle('on', x === c); });
+    document.querySelectorAll('.grid figure').forEach(function (f) {
+      f.style.display = (c.dataset.f === 'all' || f.dataset.c === c.dataset.f) ? '' : 'none';
+    });
+  });
+});
+
+var lb = document.getElementById('lb'), big = lb.querySelector('img');
+document.querySelectorAll('.grid figure').forEach(function (f) {
+  f.addEventListener('click', function () { big.src = f.querySelector('img').src; lb.classList.add('on'); });
+});
+lb.addEventListener('click', function () { lb.classList.remove('on'); });
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('on'); });
+
+var songBtn = document.getElementById('playSong'), songFrame = document.getElementById('songFrame');
+songBtn.addEventListener('click', function () {
+  if (!songFrame.firstChild) {
+    var f = document.createElement('iframe');
+    f.src = 'https://open.spotify.com/embed/track/1fDFHXcykq4iw8Gg7s5hG9?theme=0';
+    f.allow = 'encrypted-media; autoplay';
+    f.title = 'About You - The 1975';
+    songFrame.appendChild(f);
+  }
+  var on = songFrame.classList.toggle('on');
+  songBtn.textContent = on ? 'Tutup pemutar' : 'Putar lagu';
+});
+</script>
+</body>
+</html>
